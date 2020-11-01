@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/et_sh_city"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:entries="@array/city_option"
+            android:paddingStart="10dp"
+            android:drawablePadding="10dp"
+            tools:text="城市"/>
+
+        <EditText
+            android:id="@+id/et_sh_name"
+            android:layout_width="177dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@+id/et_sh_city"
+            android:layout_toRightOf="@+id/et_sh_city"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="输入酒店名称"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/et_sh_name"
+            android:background="@drawable/bg_btn"
+            android:text="搜  索"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/none_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="暂无符合要求的酒店"
+        android:textSize="25sp"
+        android:visibility="gone"/>
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/search_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="true">
+        <com.scwang.smart.refresh.header.TwoLevelHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"/>
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</LinearLayout>

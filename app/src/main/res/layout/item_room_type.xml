@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="8dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_rt_img"
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/test_roomtype_img" />
+
+            <TextView
+                android:id="@+id/tv_rt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="房型名称" />
+
+            <TextView
+                android:id="@+id/tv_rt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:textColor="#ED1A1A"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_rt_order"
+                app:layout_constraintEnd_toStartOf="@+id/btn_rt_order"
+                tools:text="100" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="100dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="￥"
+                android:textColor="#ED1A1A"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_rt_price"
+                app:layout_constraintEnd_toStartOf="@+id/tv_rt_price" />
+
+            <TextView
+                android:id="@+id/tv_rt_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@mipmap/right_icon"
+                android:text=" "
+                app:layout_constraintBottom_toBottomOf="@+id/tv_rt_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_rt_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_rt_name" />
+
+            <TextView
+                android:id="@+id/tv_rt_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/tv_rt_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rt_name"
+                tools:text="面积" />
+
+            <TextView
+                android:id="@+id/tv_rt_bedtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toTopOf="@+id/textView13"
+                tools:text="床型" />
+
+            <TextView
+                android:id="@+id/tv_rt_maxperson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/tv_rt_bedtype"
+                app:layout_constraintTop_toTopOf="@+id/tv_rt_bedtype"
+                tools:text="人数" />
+
+            <Button
+                android:id="@+id/btn_rt_order"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_btn3"
+                android:text="预 订"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平米"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_rt_area"
+                app:layout_constraintStart_toEndOf="@+id/tv_rt_area"
+                app:layout_constraintTop_toTopOf="@+id/tv_rt_area" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

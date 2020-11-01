@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="stu.lcr.eztravel.HomeFragment"
+        android:label="首页"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_mine"
+            app:destination="@id/nav_mine"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_mine"
+        android:name="stu.lcr.eztravel.MineFragment"
+        android:label="我的信息"
+        tools:layout="@layout/fragment_mine" >
+        <action
+            android:id="@+id/action_nav_mine_to_nav_recommend"
+            app:destination="@id/nav_recommend" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_recommend"
+        android:name="stu.lcr.eztravel.RecommendFragment"
+        android:label="推荐"
+        tools:layout="@layout/fragment_recommend" />
+</navigation>

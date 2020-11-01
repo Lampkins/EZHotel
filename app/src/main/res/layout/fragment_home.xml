@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.youth.banner.Banner
+            android:id="@+id/home_banner"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_home"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/home_banner"
+            tools:cardCornerRadius="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="168dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    android:drawableLeft="@drawable/hotel"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="查找酒店"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/et_city"
+                    android:layout_width="215dp"
+                    android:layout_height="45dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="选择城市"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/tv_city"
+                    app:layout_constraintTop_toTopOf="@+id/tv_city" />
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="110dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:text="城　市　"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/et_city"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/tv_hotelTitle"
+                    android:layout_width="110dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="酒店名称"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_city"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+
+                <EditText
+                    android:id="@+id/et_hotel_name"
+                    android:layout_width="215dp"
+                    android:layout_height="45dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="输入酒店名称"
+                    android:inputType="textPersonName"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_hotelTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tv_hotelTitle" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="110dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="价　格　"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_hotelTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_hotelTitle" />
+
+                <Spinner
+                    android:id="@+id/spinner_lowest_price"
+                    android:layout_width="95dp"
+                    android:layout_height="45dp"
+                    android:entries="@array/lowest_price"
+                    app:layout_constraintStart_toEndOf="@+id/tv_price"
+                    app:layout_constraintTop_toTopOf="@+id/tv_price" />
+
+                <TextView
+                    android:id="@+id/tv_to"
+                    android:layout_width="25dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="到"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toEndOf="@+id/spinner_lowest_price"
+                    app:layout_constraintTop_toTopOf="@+id/spinner_lowest_price" />
+
+                <Spinner
+                    android:id="@+id/spinner_highest_price"
+                    android:layout_width="95dp"
+                    android:layout_height="45dp"
+                    android:entries="@array/highest_price"
+                    app:layout_constraintStart_toEndOf="@+id/tv_to"
+                    app:layout_constraintTop_toTopOf="@+id/tv_to" />
+
+                <Button
+                    android:id="@+id/btn_find"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/bg_btn"
+                    android:text="查  询"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="310dp"
+                    android:layout_height="1dp"
+                    android:background="#FFC5C5C5"
+                    app:layout_constraintBottom_toTopOf="@+id/et_hotel_name"
+                    app:layout_constraintEnd_toEndOf="@+id/et_city"
+                    app:layout_constraintStart_toStartOf="@+id/tv_city"
+                    app:layout_constraintTop_toBottomOf="@+id/et_city" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="310dp"
+                    android:layout_height="0.8dp"
+                    android:background="#BCBCBC"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_to"
+                    app:layout_constraintEnd_toEndOf="@+id/et_hotel_name"
+                    app:layout_constraintStart_toStartOf="@+id/tv_hotelTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/et_hotel_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/element1"
+            android:drawablePadding="5dp"
+            android:text="金牌服务"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintEnd_toStartOf="@+id/textView31"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="覆盖全国"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView28"
+            app:layout_constraintStart_toStartOf="@+id/textView28"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:drawableTop="@drawable/element2"
+            android:drawablePadding="5dp"
+            android:text="7*24h"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintEnd_toStartOf="@+id/textView33"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_home"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全天候服务"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView31"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView31"
+            app:layout_constraintTop_toBottomOf="@+id/textView31"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/element3"
+            android:drawablePadding="5dp"
+            android:text="有房保障"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView31"
+            app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="安心入住"
+            app:layout_constraintEnd_toEndOf="@+id/textView33"
+            app:layout_constraintStart_toStartOf="@+id/textView33"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

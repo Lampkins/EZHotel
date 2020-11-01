@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HotelDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#2896BA"
+            app:expandedTitleMarginStart="5dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_hd_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    tools:background="@drawable/test_hotel_img"
+                    android:fitsSystemWindows="true"/>
+
+
+            </RelativeLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin"
+                app:title="Title">
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/tv_hd_score"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:textColor="#FFFF9853"
+            android:textSize="32sp"
+            tools:text="5.0" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/tv_hd_score"
+            android:gravity="bottom"
+            android:text="联系电话：" />
+        <TextView
+            android:id="@+id/tv_hd_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@id/tv1"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@+id/tv1"
+            android:gravity="bottom"
+            tools:text="联系电话" />
+
+        <TextView
+            android:id="@+id/tv_show_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv1"
+            android:layout_alignLeft="@id/tv1"
+            android:text="查看评论>" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@+id/tv_hd_score"
+            android:layout_alignLeft="@id/tv_hd_score"
+            android:text="地址："
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_hd_address"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/tv3"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@+id/tv3"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="15sp"
+            tools:text="酒店地址长地址长地址长地址长地址长地址长地址长地址长地址" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv3"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="酒店介绍："
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            tools:text="酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍酒店介绍" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_rt_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_introduction"
+            android:background="#BBFAF5F5"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+    </RelativeLayout>
+
+    <com.yinglan.scrolllayout.ScrollLayout
+        android:id="@+id/sl_rt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:allowHorizontalScroll="true"
+        app:exitOffset="0dp"
+        app:isSupportExit="true"
+        app:minOffset="0dp"
+        app:mode="exit"
+        tools:layout_marginTop="400dp">
+
+        <include layout="@layout/card_room_detail" />
+    </com.yinglan.scrolllayout.ScrollLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

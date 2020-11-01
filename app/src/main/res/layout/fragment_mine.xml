@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="36dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/person" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="登录/注册"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="非会员"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nickname" />
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="我的信用"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+    <View
+        android:id="@+id/divider_top"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="#efefef"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_item"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="25dp"
+        android:translationZ="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_top">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--我的订单-->
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="7dp"
+                android:drawableStart="@mipmap/order"
+                android:drawableLeft="@mipmap/order"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="我的订单"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order" />
+
+            <!--我的收藏-->
+            <TextView
+                android:id="@+id/tv_collect"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/collect"
+                android:drawableLeft="@mipmap/collect"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="7dp"
+                android:text="我的收藏"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_order"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_collect" />
+
+            <!--消费记录-->
+            <TextView
+                android:id="@+id/tv_expense"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/expense_calendar"
+                android:drawableLeft="@mipmap/expense_calendar"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="消费记录"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_collect"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_expense" />
+
+            <!--消息中心-->
+            <TextView
+                android:id="@+id/tv_message_center"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/message"
+                android:drawableLeft="@mipmap/message"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="消息中心"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_expense"
+                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="fill_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_center" />
+
+            <!--会员专享-->
+            <TextView
+                android:id="@+id/tv_vip"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@mipmap/vip"
+                android:drawableLeft="@mipmap/vip"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="会员专享"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_message_center"
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="fill_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="10dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_vip" />
+
+            <!--修改密码-->
+            <TextView
+                android:id="@+id/tv_change_password"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/account_management"
+                android:drawableLeft="@mipmap/account_management"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="修改密码"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_vip"
+                app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider5"
+                app:layout_constraintTop_toBottomOf="@+id/tv_change_password" />
+
+            <!--修改资料信息-->
+            <TextView
+                android:id="@+id/tv_change_personal_message"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/personal_message"
+                android:drawableLeft="@mipmap/personal_message"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="修改资料信息"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_change_password"
+                app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider6"
+                app:layout_constraintTop_toBottomOf="@+id/tv_change_personal_message" />
+
+            <!--退出登录-->
+            <TextView
+                android:id="@+id/tv_logout"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/logout"
+                android:drawableLeft="@mipmap/logout"
+                android:drawableEnd="@mipmap/right_icon"
+                android:drawableRight="@mipmap/right_icon"
+                android:drawablePadding="10dp"
+                android:text="退出登录"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_change_password"
+                app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#C5C5C5"
+                app:layout_constraintStart_toStartOf="@+id/divider7"
+                app:layout_constraintTop_toBottomOf="@+id/tv_logout" />
+
+            <!--客服电话-->
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="325dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@mipmap/customer_service"
+                android:drawableLeft="@mipmap/customer_service"
+                android:drawablePadding="10dp"
+                android:text="客服电话                             888888"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_logout"
+                app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

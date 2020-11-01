@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/iv_sh_img"
+                android:layout_width="130dp"
+                android:layout_height="170dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/test_hotel_img" />
+
+            <TextView
+                android:id="@+id/tv_sh_name"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:textSize="23sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="酒店名称酒店名称酒店名称酒店名称" />
+
+            <TextView
+                android:id="@+id/tv_sh_address"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxEms="13"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sh_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_sh_score"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sh_score"
+                tools:text="酒店地址长地址长地址长地址长地址长地址长地址长地址长地址" />
+
+            <TextView
+                android:id="@+id/tv_sh_startingPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#ED1A1A"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView12"
+                tools:text="100" />
+
+            <TextView
+                android:id="@+id/tv_sh_score"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:textSize="23sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_sh_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sh_name"
+                tools:text="5.0" />
+
+            <RatingBar
+                android:id="@+id/rating_grade"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="4dp"
+                android:backgroundTintMode="add"
+                android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:rating="3.7"
+                android:secondaryProgressTint="#80FBE23A"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sh_score"
+                app:layout_constraintStart_toEndOf="@+id/tv_sh_score" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="140dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="起"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sh_startingPrice"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="￥"
+                android:textColor="#ED1A1A"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sh_startingPrice"
+                app:layout_constraintEnd_toStartOf="@+id/tv_sh_startingPrice" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

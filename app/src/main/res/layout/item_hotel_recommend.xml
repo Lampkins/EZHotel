@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <!--    酒店推荐卡片       -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_city"
+                android:drawableStart="@drawable/position"
+                android:drawablePadding="5dp"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:paddingEnd="10dp"
+                android:textColor="#FFEFE9E9"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="城市" />
+
+            <ImageView
+                android:id="@+id/iv_sh_img"
+                android:layout_width="match_parent"
+                android:layout_height="192dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/test_hotel_img" />
+
+            <TextView
+                android:id="@+id/tv_sh_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_sh_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_sh_img"
+                tools:text="酒店名称：哈哈哈哈" />
+
+            <TextView
+                android:id="@+id/tv_sh_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="5dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sh_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_sh_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sh_name"
+                tools:text="酒店地址：哈哈哈哈哈哈哈哈hhhh" />
+
+            <TextView
+                android:id="@+id/tv_sh_startingPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/textView5"
+                tools:text="100" />
+
+            <TextView
+                android:id="@+id/tv_sh_score"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="5.0" />
+
+            <RatingBar
+                android:id="@+id/rating_grade"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:clickable="false"
+                android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:secondaryProgressTint="#80FBE23A"
+                app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toTopOf="@+id/textView7"
+                tools:rating="3.7" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:text="最低价："
+                app:layout_constraintStart_toStartOf="@+id/tv_sh_address"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sh_address" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="￥/d"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sh_startingPrice"
+                app:layout_constraintStart_toEndOf="@+id/tv_sh_startingPrice"
+                app:layout_constraintTop_toTopOf="@+id/tv_sh_startingPrice" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:text="评分："
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

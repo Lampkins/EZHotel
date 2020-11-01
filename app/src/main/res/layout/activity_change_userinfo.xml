@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:text="完善信息"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="用 户 名："
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_username"
+        app:layout_constraintEnd_toStartOf="@+id/et_username"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_username" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="请输入账号"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/tv_username"
+        app:layout_constraintTop_toBottomOf="@+id/tv_update" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="真实姓名："
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_fullname"
+        app:layout_constraintEnd_toStartOf="@+id/et_fullname"
+        app:layout_constraintStart_toStartOf="@+id/tv_username"
+        app:layout_constraintTop_toTopOf="@+id/et_fullname" />
+
+    <EditText
+        android:id="@+id/et_fullname"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="请输入真实姓名"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/et_username"
+        app:layout_constraintStart_toEndOf="@+id/tv_username"
+        app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+    <TextView
+        android:id="@+id/tv_confirm_password"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="邮　箱："
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_mail"
+        app:layout_constraintEnd_toStartOf="@+id/et_mail"
+        app:layout_constraintStart_toStartOf="@+id/tv_password"
+        app:layout_constraintTop_toTopOf="@+id/et_mail" />
+
+    <EditText
+        android:id="@+id/et_mail"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="请确认密码"
+        android:inputType="textEmailSubject"
+        app:layout_constraintEnd_toEndOf="@+id/et_fullname"
+        app:layout_constraintStart_toEndOf="@+id/tv_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_fullname" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="手 机 号："
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_phone"
+        app:layout_constraintEnd_toStartOf="@+id/et_phone"
+        app:layout_constraintStart_toStartOf="@+id/tv_confirm_password"
+        app:layout_constraintTop_toTopOf="@+id/et_phone" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="请输入手机号"
+        android:inputType="text|phone"
+        app:layout_constraintEnd_toEndOf="@+id/et_mail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_mail" />
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="性　别："
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rg_gender"
+        app:layout_constraintEnd_toStartOf="@+id/rg_gender"
+        app:layout_constraintStart_toStartOf="@+id/tv_phone"
+        app:layout_constraintTop_toTopOf="@+id/rg_gender" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/et_phone"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone">
+
+        <RadioButton
+            android:id="@+id/rb_gender_male"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="男"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:id="@+id/rb_gender_female"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="女"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:id="@+id/rb_gender_secrecy"
+            android:layout_width="86dp"
+            android:layout_height="match_parent"
+            android:text="保密"
+            android:textSize="17sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="340dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="完  成"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+</androidx.constraintlayout.widget.ConstraintLayout>
