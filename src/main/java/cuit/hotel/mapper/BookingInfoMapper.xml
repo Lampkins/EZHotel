@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cuit.hotel.mapper.BookingInfoMapper">
+  <resultMap id="BaseResultMap" type="cuit.hotel.entity.BookingInfo">
+    <id column="bookingID" jdbcType="INTEGER" property="bookingID" />
+    <result column="userID" jdbcType="INTEGER" property="userID" />
+    <result column="hotelID" jdbcType="INTEGER" property="hotelID" />
+    <result column="roomTypeID" jdbcType="INTEGER" property="roomTypeID" />
+    <result column="hotelName" jdbcType="VARCHAR" property="hotelName" />
+    <result column="roomTypeName" jdbcType="VARCHAR" property="roomTypeName" />
+    <result column="fullName" jdbcType="VARCHAR" property="fullName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="checkIn" jdbcType="DATE" property="checkIn" />
+    <result column="checkOut" jdbcType="DATE" property="checkOut" />
+    <result column="roomNum" jdbcType="INTEGER" property="roomNum" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="bookingStatus" jdbcType="TINYINT" property="bookingStatus" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bookingID, userID, hotelID, roomTypeID, hotelName, roomTypeName, fullName, phone, 
+    checkIn, checkOut, roomNum, price, remark, bookingStatus, createTime
+  </sql>
+  <select id="selectByUserIDAndBookingStatus" parameterType="map" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from booking_info
+    where userID = #{userID,jdbcType=INTEGER}
+    and bookingStatus &lt;= #{bookingStatus,jdbcType=TINYINT}
+    ORDER BY createTime DESC
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from booking_info
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from booking_info
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cuit.hotel.entity.BookingInfo">
+    insert into booking_info (bookingID, userID, hotelID, 
+      roomTypeID, hotelName, roomTypeName, 
+      fullName, phone, checkIn, 
+      checkOut, roomNum, price, 
+      remark, bookingStatus, createTime
+      )
+    values (#{bookingID,jdbcType=INTEGER}, #{userID,jdbcType=INTEGER}, #{hotelID,jdbcType=INTEGER}, 
+      #{roomTypeID,jdbcType=INTEGER}, #{hotelName,jdbcType=VARCHAR}, #{roomTypeName,jdbcType=VARCHAR}, 
+      #{fullName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{checkIn,jdbcType=DATE}, 
+      #{checkOut,jdbcType=DATE}, #{roomNum,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE}, 
+      #{remark,jdbcType=VARCHAR}, #{bookingStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cuit.hotel.entity.BookingInfo">
+    insert into booking_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookingID != null">
+        bookingID,
+      </if>
+      <if test="userID != null">
+        userID,
+      </if>
+      <if test="hotelID != null">
+        hotelID,
+      </if>
+      <if test="roomTypeID != null">
+        roomTypeID,
+      </if>
+      <if test="hotelName != null">
+        hotelName,
+      </if>
+      <if test="roomTypeName != null">
+        roomTypeName,
+      </if>
+      <if test="fullName != null">
+        fullName,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="checkIn != null">
+        checkIn,
+      </if>
+      <if test="checkOut != null">
+        checkOut,
+      </if>
+      <if test="roomNum != null">
+        roomNum,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="bookingStatus != null">
+        bookingStatus,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookingID != null">
+        #{bookingID,jdbcType=INTEGER},
+      </if>
+      <if test="userID != null">
+        #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelID != null">
+        #{hotelID,jdbcType=INTEGER},
+      </if>
+      <if test="roomTypeID != null">
+        #{roomTypeID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="roomTypeName != null">
+        #{roomTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="checkIn != null">
+        #{checkIn,jdbcType=DATE},
+      </if>
+      <if test="checkOut != null">
+        #{checkOut,jdbcType=DATE},
+      </if>
+      <if test="roomNum != null">
+        #{roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingStatus != null">
+        #{bookingStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cuit.hotel.entity.BookingInfo">
+    update booking_info
+    <set>
+      <if test="userID != null">
+        userID = #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelID != null">
+        hotelID = #{hotelID,jdbcType=INTEGER},
+      </if>
+      <if test="roomTypeID != null">
+        roomTypeID = #{roomTypeID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        hotelName = #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="roomTypeName != null">
+        roomTypeName = #{roomTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        fullName = #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="checkIn != null">
+        checkIn = #{checkIn,jdbcType=DATE},
+      </if>
+      <if test="checkOut != null">
+        checkOut = #{checkOut,jdbcType=DATE},
+      </if>
+      <if test="roomNum != null">
+        roomNum = #{roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingStatus != null">
+        bookingStatus = #{bookingStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cuit.hotel.entity.BookingInfo">
+    update booking_info
+    set userID = #{userID,jdbcType=INTEGER},
+      hotelID = #{hotelID,jdbcType=INTEGER},
+      roomTypeID = #{roomTypeID,jdbcType=INTEGER},
+      hotelName = #{hotelName,jdbcType=VARCHAR},
+      roomTypeName = #{roomTypeName,jdbcType=VARCHAR},
+      fullName = #{fullName,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      checkIn = #{checkIn,jdbcType=DATE},
+      checkOut = #{checkOut,jdbcType=DATE},
+      roomNum = #{roomNum,jdbcType=INTEGER},
+      price = #{price,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR},
+      bookingStatus = #{bookingStatus,jdbcType=TINYINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </update>
+</mapper>

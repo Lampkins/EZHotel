@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cuit.hotel.mapper.CommentInfoMapper">
+  <resultMap id="BaseResultMap" type="cuit.hotel.entity.CommentInfo">
+    <id column="bookingID" jdbcType="INTEGER" property="bookingID" />
+    <result column="userID" jdbcType="INTEGER" property="userID" />
+    <result column="hotelID" jdbcType="INTEGER" property="hotelID" />
+    <result column="score" jdbcType="DOUBLE" property="score" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="reply" jdbcType="VARCHAR" property="reply" />
+    <result column="commentStatus" jdbcType="TINYINT" property="commentStatus" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="roomTypeName" jdbcType="VARCHAR" property="roomTypeName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bookingID, userID, hotelID, score, content, reply, commentStatus, createTime, userName, 
+    roomTypeName
+  </sql>
+  <select id="selectByHotelID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from comment_info
+    where hotelID = #{hotelID,jdbcType=INTEGER}
+    ORDER BY createTime DESC
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from comment_info
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from comment_info
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cuit.hotel.entity.CommentInfo">
+    insert into comment_info (bookingID, userID, hotelID, 
+      score, content, reply, 
+      commentStatus, createTime, userName, 
+      roomTypeName)
+    values (#{bookingID,jdbcType=INTEGER}, #{userID,jdbcType=INTEGER}, #{hotelID,jdbcType=INTEGER}, 
+      #{score,jdbcType=DOUBLE}, #{content,jdbcType=VARCHAR}, #{reply,jdbcType=VARCHAR},
+      #{commentStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{userName,jdbcType=VARCHAR}, 
+      #{roomTypeName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cuit.hotel.entity.CommentInfo">
+    insert into comment_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookingID != null">
+        bookingID,
+      </if>
+      <if test="userID != null">
+        userID,
+      </if>
+      <if test="hotelID != null">
+        hotelID,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="reply != null">
+        reply,
+      </if>
+      <if test="commentStatus != null">
+        commentStatus,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="userName != null">
+        userName,
+      </if>
+      <if test="roomTypeName != null">
+        roomTypeName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookingID != null">
+        #{bookingID,jdbcType=INTEGER},
+      </if>
+      <if test="userID != null">
+        #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelID != null">
+        #{hotelID,jdbcType=INTEGER},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="reply != null">
+        #{reply,jdbcType=VARCHAR},
+      </if>
+      <if test="commentStatus != null">
+        #{commentStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="roomTypeName != null">
+        #{roomTypeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cuit.hotel.entity.CommentInfo">
+    update comment_info
+    <set>
+      <if test="userID != null">
+        userID = #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelID != null">
+        hotelID = #{hotelID,jdbcType=INTEGER},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="reply != null">
+        reply = #{reply,jdbcType=VARCHAR},
+      </if>
+      <if test="commentStatus != null">
+        commentStatus = #{commentStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userName != null">
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="roomTypeName != null">
+        roomTypeName = #{roomTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cuit.hotel.entity.CommentInfo">
+    update comment_info
+    set userID = #{userID,jdbcType=INTEGER},
+      hotelID = #{hotelID,jdbcType=INTEGER},
+      score = #{score,jdbcType=DOUBLE},
+      content = #{content,jdbcType=VARCHAR},
+      reply = #{reply,jdbcType=VARCHAR},
+      commentStatus = #{commentStatus,jdbcType=TINYINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      userName = #{userName,jdbcType=VARCHAR},
+      roomTypeName = #{roomTypeName,jdbcType=VARCHAR}
+    where bookingID = #{bookingID,jdbcType=INTEGER}
+  </update>
+</mapper>

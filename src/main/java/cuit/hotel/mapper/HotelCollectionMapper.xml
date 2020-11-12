@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cuit.hotel.mapper.HotelCollectionMapper">
+  <resultMap id="BaseResultMap" type="cuit.hotel.entity.HotelCollection">
+    <id column="userID" jdbcType="INTEGER" property="userID" />
+    <id column="hotelID" jdbcType="INTEGER" property="hotelID" />
+    <result column="hotelName" jdbcType="VARCHAR" property="hotelName" />
+    <result column="startingPrice" jdbcType="DOUBLE" property="startingPrice" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userID, hotelID, hotelName, startingPrice, city
+  </sql>
+  <select id="selectByKey" parameterType="map" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from hotel_collection
+    <where>
+      <if test="userID != null">
+        and userID = #{userID,jdbcType=INTEGER}
+      </if>
+      <if test="hotelID != null">
+        and hotelID = #{hotelID,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from hotel_collection
+    where userID = #{userID,jdbcType=INTEGER}
+      and hotelID = #{hotelID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cuit.hotel.entity.HotelCollection">
+    insert into hotel_collection (userID, hotelID, hotelName, 
+      startingPrice, city)
+    values (#{userID,jdbcType=INTEGER}, #{hotelID,jdbcType=INTEGER}, #{hotelName,jdbcType=VARCHAR}, 
+      #{startingPrice,jdbcType=DOUBLE}, #{city,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cuit.hotel.entity.HotelCollection">
+    insert into hotel_collection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userID != null">
+        userID,
+      </if>
+      <if test="hotelID != null">
+        hotelID,
+      </if>
+      <if test="hotelName != null">
+        hotelName,
+      </if>
+      <if test="startingPrice != null">
+        startingPrice,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userID != null">
+        #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelID != null">
+        #{hotelID,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="startingPrice != null">
+        #{startingPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cuit.hotel.entity.HotelCollection">
+    update hotel_collection
+    <set>
+      <if test="hotelName != null">
+        hotelName = #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="startingPrice != null">
+        startingPrice = #{startingPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userID = #{userID,jdbcType=INTEGER}
+      and hotelID = #{hotelID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cuit.hotel.entity.HotelCollection">
+    update hotel_collection
+    set hotelName = #{hotelName,jdbcType=VARCHAR},
+      startingPrice = #{startingPrice,jdbcType=DOUBLE},
+      city = #{city,jdbcType=VARCHAR}
+    where userID = #{userID,jdbcType=INTEGER}
+      and hotelID = #{hotelID,jdbcType=INTEGER}
+  </update>
+</mapper>
